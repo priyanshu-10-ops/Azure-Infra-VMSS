@@ -21,3 +21,11 @@ VMSS_PROJECT/
     ├── azurerm_sql_db/
     ├── azurerm_sql_server/
     └── azurerm_storage_account/
+```
+
+## Best-Practices
+Parameterize only what varies
+Avoid unreadable over-dynamic modules
+
+## Note
+Each VMSS gets its own subnet, LB backend pool and NAT pool

@@ -16,3 +16,31 @@ resource "azurerm_virtual_network" "vnet" {
 
   tags = each.value.tags
 }
+
+
+
+# Traffic Flow
+/*
+Internet
+   ↓
+Application Gateway (WAF v2)
+   ↓
+Frontend VMSS (NIC)
+   ↓
+Internal Load Balancer
+   ↓
+Backend VMSS (NIC)
+   ↓
+Private Endpoint
+   ↓
+Azure SQL
+*/
+
+
+
+# In parallel
+/*
+Backend VMSS → Private Endpoint → Key Vault
+Backend VMSS → Log Analytics
+All resources → Storage Account (diagnostics)
+*/
